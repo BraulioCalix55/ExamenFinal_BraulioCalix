@@ -6,5 +6,34 @@
 package examenfinal_brauliocalix;
 
 public class Expedicion extends Thread {
+    private Naves nave;
+    private Planeta planeta;
+
+    public Expedicion(Naves nave, Planeta planeta) {
+        this.nave = nave;
+        this.planeta = planeta;
+    }
+
+    public Naves getNave() {
+        return nave;
+    }
+
+    public void setNave(Naves nave) {
+        this.nave = nave;
+    }
+
+    public Planeta getPlaneta() {
+        return planeta;
+    }
+
+    public void setPlaneta(Planeta planeta) {
+        this.planeta = planeta;
+    }
+
+    @Override
+    public void run() {
+        
+    }
+    
 
 }

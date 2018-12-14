@@ -47,11 +47,23 @@ public class Sonda extends Naves {
     }
 
     @Override
-    ArrayList calculartiempo() {
-        return null;
-        
+    ArrayList calculartiempo(Naves nave, Planeta destino) {
+        ArrayList datos = new ArrayList();
+        double ida, vuelta;
+        double dist = destino.getDistancia();
+        ida = (dist) / (super.getVelocidad());
+        vuelta = (9.8) * super.getVelocidad();
+        datos.add(ida);
+        datos.add(vuelta);
+
+        return datos;
+
     }
 
-    
+    @Override
+    void expedicion(Naves nave, Planeta destino) {
+        Expedicion exp = new Expedicion(nave, destino);
+        exp.start();
+    }
 
 }

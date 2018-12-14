@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author User
  */
 public abstract class Naves {
+
     private int serie;
     private Planeta dest;
     private double velocidad;
@@ -53,7 +54,9 @@ public abstract class Naves {
     public String toString() {
         return "Naves{" + "serie=" + serie + ", dest=" + dest + ", velocidad=" + velocidad + '}';
     }
-    
-    abstract ArrayList calculartiempo();
-    
+
+    abstract void expedicion(Naves nave, Planeta destino);
+
+    abstract ArrayList calculartiempo(Naves nave, Planeta destino);
+
 }

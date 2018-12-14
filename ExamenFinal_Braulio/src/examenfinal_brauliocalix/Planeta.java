@@ -15,12 +15,12 @@ public class Planeta {
     private String tem;
     private int anillos;
     private String superficie;
-    private String distancia ;
+    private double distancia ;
 
     public Planeta() {
     }
 
-    public Planeta(String Nombre, String tem, int anillos, String superficie, String distancia) {
+    public Planeta(String Nombre, String tem, int anillos, String superficie, double distancia) {
         this.Nombre = Nombre;
         this.tem = tem;
         this.anillos = anillos;
@@ -60,11 +60,11 @@ public class Planeta {
         this.superficie = superficie;
     }
 
-    public String getDistancia() {
+    public double getDistancia() {
         return distancia;
     }
 
-    public void setDistancia(String distancia) {
+    public void setDistancia(double distancia) {
         this.distancia = distancia;
     }
 

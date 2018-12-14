@@ -7,7 +7,8 @@ package examenfinal_brauliocalix;
 
 import java.util.ArrayList;
 
-public class Tripulada extends Naves{
+public class Tripulada extends Naves {
+
     private String despeje;
     private ArrayList tripulacion;
 
@@ -40,12 +41,27 @@ public class Tripulada extends Naves{
     public String toString() {
         return "Tripulada{" + "despeje=" + despeje + ", tripulacion=" + tripulacion + '}';
     }
-    
 
     @Override
-    ArrayList calculartiempo() {
-        return null;
-        
+    ArrayList calculartiempo(Naves nave, Planeta destino) {
+        ArrayList datos = new ArrayList();
+        double ida, vuelta;
+        double dist = destino.getDistancia();
+        double sumacuadrado, sumanormal;
+        sumacuadrado = Math.pow((double) tripulacion.size(), 2);
+        sumanormal = tripulacion.size();
+        ida = (destino.getDistancia()) / nave.getVelocidad() * (sumacuadrado / 100);
+        vuelta = (destino.getDistancia()) / nave.getVelocidad() * (sumanormal / 100);
+        datos.add(ida);
+        datos.add(vuelta);
+
+        return datos;
     }
-    
+
+    @Override
+    void expedicion(Naves nave, Planeta destino) {
+        Expedicion exp = new Expedicion(nave, destino);
+        exp.start();
+    }
+
 }
