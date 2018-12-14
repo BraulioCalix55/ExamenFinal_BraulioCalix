@@ -10,9 +10,67 @@ package examenfinal_brauliocalix;
  * @author User
  */
 public class Planeta {
+
     private String Nombre;
     private String tem;
-    private ;
-    private ;
-    private ;
+    private int anillos;
+    private String superficie;
+    private String distancia ;
+
+    public Planeta() {
+    }
+
+    public Planeta(String Nombre, String tem, int anillos, String superficie, String distancia) {
+        this.Nombre = Nombre;
+        this.tem = tem;
+        this.anillos = anillos;
+        this.superficie = superficie;
+        this.distancia = distancia;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getTem() {
+        return tem;
+    }
+
+    public void setTem(String tem) {
+        this.tem = tem;
+    }
+
+    public int getAnillos() {
+        return anillos;
+    }
+
+    public void setAnillos(int anillos) {
+        this.anillos = anillos;
+    }
+
+    public String getSuperficie() {
+        return superficie;
+    }
+
+    public void setSuperficie(String superficie) {
+        this.superficie = superficie;
+    }
+
+    public String getDistancia() {
+        return distancia;
+    }
+
+    public void setDistancia(String distancia) {
+        this.distancia = distancia;
+    }
+
+    @Override
+    public String toString() {
+        return "Planeta{" + "Nombre=" + Nombre + ", superficie=" + superficie + '}';
+    }
+    
 }
