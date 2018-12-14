@@ -6,6 +6,7 @@
 package examenfinal_brauliocalix;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
 
 /**
  *
@@ -15,14 +16,16 @@ public class Sonda extends Naves {
 
     private String material;
     private double peso;
+    private JTable tabla;
 
     public Sonda() {
     }
 
-    public Sonda(String material, double peso, int serie, Planeta dest, double velocidad) {
+    public Sonda(String material, double peso, JTable tabla, String serie, Planeta dest, double velocidad) {
         super(serie, dest, velocidad);
         this.material = material;
         this.peso = peso;
+        this.tabla = tabla;
     }
 
     public String getMaterial() {
@@ -53,6 +56,9 @@ public class Sonda extends Naves {
         double dist = destino.getDistancia();
         ida = (dist) / (super.getVelocidad());
         vuelta = (9.8) * super.getVelocidad();
+        ida=ida;
+        vuelta=vuelta;
+        System.out.println("vuleta"+vuelta);
         datos.add(ida);
         datos.add(vuelta);
 
@@ -61,8 +67,9 @@ public class Sonda extends Naves {
     }
 
     @Override
-    void expedicion(Naves nave, Planeta destino) {
-        Expedicion exp = new Expedicion(nave, destino);
+    void expedicion(Naves nave, Planeta destino, JTable tabla) {
+        ArrayList datos = calculartiempo(nave, destino);
+        Expedicion exp = new Expedicion(nave, destino, tabla, datos);
         exp.start();
     }
 

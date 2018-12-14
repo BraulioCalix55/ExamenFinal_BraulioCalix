@@ -6,6 +6,7 @@
 package examenfinal_brauliocalix;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
 
 /**
  *
@@ -13,24 +14,24 @@ import java.util.ArrayList;
  */
 public abstract class Naves {
 
-    private int serie;
+    private String serie;
     private Planeta dest;
     private double velocidad;
 
     public Naves() {
     }
 
-    public Naves(int serie, Planeta dest, double velocidad) {
+    public Naves(String serie, Planeta dest, double velocidad) {
         this.serie = serie;
         this.dest = dest;
         this.velocidad = velocidad;
     }
 
-    public int getSerie() {
+    public String getSerie() {
         return serie;
     }
 
-    public void setSerie(int serie) {
+    public void setSerie(String serie) {
         this.serie = serie;
     }
 
@@ -55,7 +56,7 @@ public abstract class Naves {
         return "Naves{" + "serie=" + serie + ", dest=" + dest + ", velocidad=" + velocidad + '}';
     }
 
-    abstract void expedicion(Naves nave, Planeta destino);
+    abstract void expedicion(Naves nave, Planeta destino, JTable tabla);
 
     abstract ArrayList calculartiempo(Naves nave, Planeta destino);
 

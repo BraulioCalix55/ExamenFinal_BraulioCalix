@@ -5,22 +5,25 @@
  */
 package examenfinal_brauliocalix;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Planeta {
+public class Planeta implements Serializable {
 
     private String Nombre;
     private String tem;
-    private int anillos;
+    private String anillos;
     private String superficie;
-    private double distancia ;
+    private double distancia;
+    private static final long SerialVersionUID = 1;
 
     public Planeta() {
     }
 
-    public Planeta(String Nombre, String tem, int anillos, String superficie, double distancia) {
+    public Planeta(String Nombre, String tem, String anillos, String superficie, double distancia) {
         this.Nombre = Nombre;
         this.tem = tem;
         this.anillos = anillos;
@@ -44,11 +47,11 @@ public class Planeta {
         this.tem = tem;
     }
 
-    public int getAnillos() {
+    public String getAnillos() {
         return anillos;
     }
 
-    public void setAnillos(int anillos) {
+    public void setAnillos(String anillos) {
         this.anillos = anillos;
     }
 
@@ -70,7 +73,7 @@ public class Planeta {
 
     @Override
     public String toString() {
-        return "Planeta{" + "Nombre=" + Nombre + ", superficie=" + superficie + '}';
+        return Nombre;
     }
-    
+
 }

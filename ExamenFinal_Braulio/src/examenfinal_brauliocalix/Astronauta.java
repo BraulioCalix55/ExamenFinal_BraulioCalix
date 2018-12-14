@@ -5,22 +5,25 @@
  */
 package examenfinal_brauliocalix;
 
+import java.io.Serializable;
+
 /**
  *
  * @author User
  */
-public class Astronauta {
+public class Astronauta implements Serializable {
     private String nombre;
     private String nacion;
     private String sueldo;
     private int exp;
-    private int sexo;
+    private String sexo;
     private int peso;
+     private static final long SerialVersionUID=1;
 
     public Astronauta() {
     }
 
-    public Astronauta(String nombre, String nacion, String sueldo, int exp, int sexo, int peso) {
+    public Astronauta(String nombre, String nacion, String sueldo, int exp, String sexo, int peso) {
         this.nombre = nombre;
         this.nacion = nacion;
         this.sueldo = sueldo;
@@ -61,11 +64,11 @@ public class Astronauta {
         this.exp = exp;
     }
 
-    public int getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(int sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

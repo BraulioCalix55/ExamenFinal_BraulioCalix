@@ -6,19 +6,22 @@
 package examenfinal_brauliocalix;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
 
 public class Tripulada extends Naves {
 
     private String despeje;
     private ArrayList tripulacion;
+    private JTable tabla;
 
     public Tripulada() {
     }
 
-    public Tripulada(String despeje, ArrayList tripulacion, int serie, Planeta dest, double velocidad) {
+    public Tripulada(String despeje, ArrayList tripulacion, String serie, Planeta dest, double velocidad, JTable tabla) {
         super(serie, dest, velocidad);
         this.despeje = despeje;
         this.tripulacion = tripulacion;
+        this.tabla = tabla;
     }
 
     public String getDespeje() {
@@ -52,6 +55,9 @@ public class Tripulada extends Naves {
         sumanormal = tripulacion.size();
         ida = (destino.getDistancia()) / nave.getVelocidad() * (sumacuadrado / 100);
         vuelta = (destino.getDistancia()) / nave.getVelocidad() * (sumanormal / 100);
+        ida=ida;
+        vuelta=vuelta;
+        System.out.println("vuelta "+vuelta);
         datos.add(ida);
         datos.add(vuelta);
 
@@ -59,9 +65,12 @@ public class Tripulada extends Naves {
     }
 
     @Override
-    void expedicion(Naves nave, Planeta destino) {
-        Expedicion exp = new Expedicion(nave, destino);
+    void expedicion(Naves nave, Planeta destino, JTable tabla) {
+        ArrayList datos = calculartiempo(nave, destino);
+        Expedicion exp = new Expedicion(nave, destino, tabla, datos);
         exp.start();
     }
+
+    
 
 }
