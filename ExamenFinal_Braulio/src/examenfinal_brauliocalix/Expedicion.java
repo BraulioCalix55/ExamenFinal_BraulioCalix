@@ -48,7 +48,7 @@ public class Expedicion extends Thread {
         boolean ida = false;
             boolean vuelta = false;
         while (termina != true) {
-           System.out.println(num);
+           //System.out.println(num);
            
             if (vuelta == true && vuelta == true) {
                 termina = true;
